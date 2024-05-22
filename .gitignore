@@ -30,3 +30,5 @@ ndc-elasticsearch
 
 # configuration files
 configuration.json
+
+.secrets
