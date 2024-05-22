@@ -94,6 +94,8 @@ jobs:
 
   release:
     name: release to GitHub
+    permissions:
+      contents: write
     needs:
       - build-and-push-image
       - build-cli-binaries
