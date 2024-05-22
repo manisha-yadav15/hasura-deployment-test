@@ -1,0 +1,20 @@
+packagingDefinition:
+  type: PrebuiltDockerImage
+  dockerImage: "${DOCKER_IMAGE}"
+supportedEnvironmentVariables:
+  - name: ELASTICSEARCH_URL
+    description: The Elasticsearch connection URL
+  - name: ELASTICSEARCH_USERNAME
+    description: The Elasticsearch connection username
+  - name: ELASTICSEARCH_PASSWORD
+    description: The Elasticsearch connection password
+commands:
+  update: hasura-elasticsearch update
+cliPlugin:
+  name: elasticsearch
+  version: "${CLI_VERSION}"
+dockerComposeWatch:
+  - path: ./
+    target: /etc/connector
+    action: sync+restart
+
